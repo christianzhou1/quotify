@@ -1,9 +1,14 @@
+<script setup>
+import TheHeader from '@/components/TheHeader.vue'
+</script>
+
 <template>
-  <div>
+  <main>
+    <TheHeader />
     <div class="home-page" v-if="quote">
-      <h1>Home Page</h1>
+      <h1>Home</h1>
       <select id="select-category" v-model="category" @change="onCategoryChange">
-        <option v-for="cat in categories" :key="cat" :value="cat">
+        <option class="quote-cat-option" v-for="cat in categories" :key="cat" :value="cat">
           {{ cat.charAt(0).toUpperCase() + cat.slice(1) }}
         </option>
       </select>
@@ -18,11 +23,9 @@
       </div>
       <button @click="generateRandomCategory()">Generate a quote in a random category</button>
     </div>
-  </div>
+  </main>
 </template>
 <script>
-// import _ from 'lodash'
-
 export default {
   data() {
     return {
