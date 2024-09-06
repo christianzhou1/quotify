@@ -116,6 +116,8 @@ export default {
         return
       }
       try {
+        console.log('fetching quote')
+        console.log(this.apiKey)
         const response = await fetch(`https://api.api-ninjas.com/v1/quotes?category=${category}`, {
           headers: {
             'X-Api-Key': this.apiKey
